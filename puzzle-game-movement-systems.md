@@ -1,0 +1,73 @@
+# Discussion: Puzzle Game Movement Systems, with Sean Barrett
+
+Link: https://www.youtube.com/watch?v=_tMb7OS2TOU
+
+- 0:25: context: puzzle game walkthrough
+- 2:00: movement & animation problem statement
+- 4:10: one of the harder things Jon's done
+- 5:40: Sean's description of the high production solitaire game
+- 6:40: interruptible card dragging
+- 9:10: solve a turn-based game with delayed animations
+- 11:45: example of similar problem in Jon's sokoban game
+- 17:10: why it's hard in this game
+- 21:20: debug view of the game state
+- 23:25: demonstration of a bug due to complexity
+- 23:50: transactions view
+- 26:15: testing an extreme case
+- 29:35: explanation of why the simple solution doesn't work
+- 33:00: example level that'd be wrecked from the simple solution
+- 38:30: falling mechanics vs the asynchronicity
+- 42:20: different character with different capability
+- 47:10: if it's too broken, don't design that level
+- 51:35: break, Q&A before talking about the solution
+- 57:25: back, answer the question "why not just simulate an entity at time"
+- 1:03:00:: a surprising rule inside Braid
+- 1:05:05: another question: are there 2 transaction systems
+- 1:07:50: Sean's question on continuous vs discrete time
+- 1:10:30: another question
+- 1:15:15: another complexity because of discrete + continuous
+- 1:20:15: question on whether to use some academic methods
+- 1:24:45: work ethic & philosophy of making a game
+- 1:27:30: question on why bother with the real-time aspect
+- 1:31:35: question: does adding a new mechanic changes the rules
+- 1:38:15: discreteness of puzzle helps with intuitive simulation
+- 1:41:25: question: attempted solution for solving 2 lily pads
+- 1:44:30: question: 2 forces acting on the same object
+- 1:52:20: lilypad cycle stress test
+- 1:59:10: question: object on multiple tiles?
+- 2:06:05: more invariants
+- 2:13:00: big realization & proper problem statement
+- 2:18:15: actual solution, transactions
+- 2:22:10: explanation of transaction colors
+- 2:26:00: transaction resolution fallback strategy
+- 2:32:00: example of situation-specific transaction resolution
+- 2:35:40: invariant of puzzle rules, transactions conflict detection
+- 2:45:00: summary of lily pad
+- 2:54:15: belated explanation of what a transaction is
+- 2:55:40: analogy to database atomicity
+- 2:58:45: dragon breath ramp-up time
+- 3:00:20: what happens when you do 2 actions in the same frame
+- 3:03:00: examining move_lilies
+- 3:06:55: 2 methods to minimize visual glitches
+- 3:12:05: bad failure case with one of the naive approaches
+- 3:16:20: playing sound at the right time
+- 3:17:40: when to cancel sound/keep it going
+- 3:19:00: Q&A
+- 3:23:00: hindsight of how long it took to come up with the solution
+- 3:24:55: moral: no compromise on the core thing
+- 3:25:50: question on close commit
+- 3:30:45: question on rules being data or code
+- 3:31:55: question on undo relation with transactions
+- 3:40:20: question on which levels to add/remove due to complexity
+- 3:46:45: find the right boundary
+- 3:48:20: question on integration tests of levels
+- 4:04:30: Sean's summary
+- 4:05:10: Jon's key insight
+- 4:09:00: question on reusing this solution for subsequent games
+- 4:11:00: question on rule & visual consistency trade-offs
+- 4:15:50: freedom of minimizing visual glitches
+- 4:17:50: comment on undo system not rewinding with animation
+- 4:22:45: question on a level taking 8 hours
+- 4:27:00: leveraging the player's subconsciousness
+- 4:33:00: question on procedural animation
+- 4:42:05: question on parallel between puzzle game & compiler
